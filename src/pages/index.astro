@@ -12,9 +12,8 @@ import ProcessCard from "../components/ProcessCard.astro";
       <ul class="links" id="navLinks">
         <li><a href="/aboutus">OUR STORY</a></li>
         <li><a href="/community">COMMUNITY</a></li>
-        <li><a href="/event_gallery">EVENTS</a></li>
-        <li><a href="/">CONTACT</a></li>
         <li><a href="/product_list">SHOP</a></li>
+        <li><a href="/event_gallery">EVENTS</a></li>
       </ul>
     </div>
     <div class="nav_logo">
@@ -30,6 +29,32 @@ import ProcessCard from "../components/ProcessCard.astro";
     <div class="hero_tekst">
       <h1>THEY SAID WE COULDN'T. WE SAID "WATCH US".</h1>
       <h2>Exclusive Modest Activewear</h2>
+    </div>
+  </section>
+
+  <section class="products">
+    <h1><a href="/product_list">Our Products</a></h1>
+    <div class="karusel-wrapper">
+      <div class="product_grid">
+        <ProductCard
+          img_1="src/assets/producter/active_hijab_steel.webp"
+          img_2="src/assets/producter/product1_1.png"
+          name="ACTIVE HIJAB"
+          link=""
+        />
+        <ProductCard
+          img_1="src/assets/producter/origin_zip_top.webp"
+          img_2="src/assets/producter/origin_training_pants.webp"
+          name="ACTIVE WEAR"
+          link=""
+        />
+        <ProductCard
+          img_1="src/assets/producter/origin_daily_tote.webp"
+          img_2="src/assets/producter/reclaim_posetaske.png"
+          name="ACTIVE ACCESORIES"
+          link=""
+        />
+      </div>
     </div>
   </section>
 
@@ -69,32 +94,6 @@ import ProcessCard from "../components/ProcessCard.astro";
     </iframe>
   </section>
 
-  <section class="products">
-    <h1><a href="/product_list">Our Products</a></h1>
-    <div class="karusel-wrapper">
-      <div class="product_grid">
-        <ProductCard
-          img_1="src/assets/producter/active_hijab_steel.webp"
-          img_2="src/assets/producter/product1_1.png"
-          name="ACTIVE HIJAB"
-          link=""
-        />
-        <ProductCard
-          img_1="src/assets/producter/origin_zip_top.webp"
-          img_2="src/assets/producter/origin_training_pants.webp"
-          name="ACTIVE WEAR"
-          link=""
-        />
-        <ProductCard
-          img_1="src/assets/producter/origin_daily_tote.webp"
-          img_2="src/assets/producter/reclaim_posetaske.png"
-          name="ACTIVE ACCESORIES"
-          link=""
-        />
-      </div>
-    </div>
-  </section>
-
   <section class="process_section">
     <div class="karusel-wrapper">
       <div class="process_grid">
@@ -124,8 +123,7 @@ import ProcessCard from "../components/ProcessCard.astro";
       <img src="src/assets/producter/BasketEvent.png" />
     </div>
     <a href="/event_gallery"
-      ><button class="Events_button"><h1 class="h1_knap">Our Events</h1></button
-      >
+      ><button class="Events_button">Our Events</button>
     </a>
   </section>
 
@@ -391,10 +389,7 @@ import ProcessCard from "../components/ProcessCard.astro";
       padding-bottom: 100px;
       text-align: center;
     }
-    .h1_knap {
-      text-align: center;
-      text-decoration: underline;
-    }
+
     .event_grid {
       margin: 0 auto;
       padding: 20px;
@@ -410,13 +405,18 @@ import ProcessCard from "../components/ProcessCard.astro";
       padding-bottom: 1rem;
     }
     .Events_button {
-      background: none;
+      padding: 0.75rem 1.5rem;
+      background-color: #000;
+      color: #fff;
       border: none;
-      padding: 1rem 2rem;
-      text-decoration: underline;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
+
     .Events_button:hover {
-      text-size-adjust: 150%;
+      background-color: #333;
     }
 
     /* COMMUNITY SECTION*/

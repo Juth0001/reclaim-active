@@ -1,0 +1,374 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MvvCard2 from "../components/MvvCard2.astro";
+---
+
+<Layout>
+  <header>
+    <div class="topnav">
+      <div class="burger" id="burger">☰</div>
+      <ul class="links" id="navLinks">
+        <li><a href="/aboutus">OUR STORY</a></li>
+        <li><a href="/community">COMMUNITY</a></li>
+        <li><a href="/event_gallery">EVENTS</a></li>
+        <li><a href="/">CONTACT</a></li>
+        <li><a href="/product_list">SHOP</a></li>
+      </ul>
+    </div>
+    <div class="nav_logo">
+      <a href="/"><img src="/src/assets/logo.png" alt="Logo" /></a>
+    </div>
+  </header>
+
+  <section class="hero_about">
+    <h1>About Us</h1>
+    <img src="src/assets/AboutUsHero.png" />
+  </section>
+
+  <section class="story">
+    <h1>The story behind Reclaim Active</h1>
+    <p>
+      At Reclaim Active, our mission is to empower modest women with innovative
+      activewear that honors both performance and personal values. We champion
+      the right to be active without compromise, creating high-quality hijabs
+      and apparel that support movement, comfort, and confidence. Together,
+      we’re redefining activewear to celebrate inclusivity, freedom, and
+      strength.
+    </p>
+  </section>
+
+  <section class="change">
+    <h2>CHANGE IS NEEDED</h2>
+    <p>
+      This is just the beginning of revolutionizing the activewear industry to
+      include and cater to modest women.
+    </p>
+  </section>
+
+  <section class="MVV_section">
+    <img src="src/assets/MVVabout.png" />
+    <div class="karusel-wrapper">
+      <div class="MVV_grid">
+        <MvvCard2
+          overskrift="Mission"
+          tekst="At Reclaim Active, our mission is to empower modest women with innovative activewear that honors both performance and personal values. We champion the right to be active without compromise, creating high-quality hijabs and apparel that support movement, comfort, and confidence. Together, we’re redefining activewear to celebrate inclusivity, freedom, and strength."
+        />
+        <MvvCard2
+          overskrift="Vision"
+          tekst="Our vision is to lead a global shift in activewear by making inclusivity the standard, not the exception. We strive to inspire and empower a community where every woman feels seen, supported, and free to pursue an active lifestyle—regardless of attire or background."
+        />
+        <MvvCard2
+          overskrift="Vallues"
+          tekst="Reclaim Active stands for inclusivity and empowerment, providing activewear that allows every woman to move freely and confidently. We drive innovation to create high-performance gear tailored to modest needs, fostering a supportive community where everyone belongs. Grounded in authenticity, we design with purpose, informed by the real experiences of the women we serve."
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="trustpilot"></section>
+
+  <section class="Creator">
+    <img src="src/assets/creator1.png" class="creator_1" />
+    <h2 class="creator_2">
+      <strong
+        >“Reclaim Active was founded with a clear purpose: To cater to the unmet
+        needs of active modest women.”</strong
+      >
+    </h2>
+    <img src="src/assets/creator2.png" class="creator_3" />
+    <p class="creator_4">
+      <strong>Sumeya The creator of Reclaim Active</strong>
+    </p>
+  </section>
+
+  <section class="Community">
+    <h2>Stay Updated On</h2>
+    <h1>COLLECTIVE SOCIALS</h1>
+    <div>
+      <a
+        href="https://www.instagram.com/reclaimactive?igsh=MXFrZWxvank1YmpmeA%3D%3D"
+        target="_blank"><img src="src/assets/instagram_icon.png" /></a
+      >
+      <a
+        href="https://www.facebook.com/profile.php?id=61563474538002"
+        target="_blank"
+      >
+        <img src="src/assets/facebook_icon.png" /></a
+      >
+      <a
+        href="https://www.tiktok.com/@reclaimactive?_t=8p1fMl26r0z&_r=1"
+        target="_blank"><img src="src/assets/tiktok_icon.png" /></a
+      >
+    </div>
+  </section>
+  <footer>
+    <div class="footer_logo">
+      <img src="src/assets/logo_footer.png" />
+    </div>
+
+    <div class="part_1">
+      <h4>INFORMATION</h4>
+      <p>FAQ & Contact</p>
+      <p>Priacy & Cookie policy</p>
+    </div>
+    <div class="part_2">
+      <h4>CONTACT US</h4>
+      <p>CVR : 38572377</p>
+      <p>info@reclaimeactive.com</p>
+      <p>2025 Reclaime Active All rights reserved</p>
+    </div>
+    <div class="part_3">
+      <h4>NEWSLETTER</h4>
+      <p>
+        Join our email list and get alerted of new launches, special offers and
+        restocks.
+      </p>
+      <form class="email-form">
+        <label for="email">Tilmeld dig vores nyhedsbrev:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Indtast din e-mail"
+          required
+        />
+        <button type="submit">Tilmeld</button>
+      </form>
+    </div>
+  </footer>
+
+  <script is:inline>
+    const burger = document.getElementById("burger");
+    const navLinks = document.getElementById("navLinks");
+
+    burger?.addEventListener("click", () => {
+      navLinks?.classList.toggle("active");
+    });
+  </script>
+</Layout>
+<style>
+  @media (max-width: 768px) {
+    /* HEADER/NAVIGATION*/
+    header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    .topnav {
+      grid-column: 1 / 2;
+      display: flex;
+      align-items: center;
+    }
+    .nav_logo {
+      grid-column: 3 / 4;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .nav_logo img {
+      height: 40px;
+    }
+    .links {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      list-style: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80vw;
+      height: 25%;
+
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      font-size: 1.2rem;
+      gap: 20px;
+    }
+    .links.active {
+      display: flex;
+    }
+    .links li a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .burger {
+      display: block;
+      font-size: 32px;
+      cursor: pointer;
+      z-index: 1100;
+      padding: 10px;
+    }
+
+    /*ABOUT US SECTION*/
+    .hero_about img {
+      max-width: 450px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .hero_about {
+      margin-top: 8rem;
+      align-items: center;
+    }
+
+    /*STORY SECTION*/
+    .story h1 {
+      padding-top: 2rem;
+    }
+    .story p {
+      padding: 2rem;
+    }
+
+    /*CHANGE*/
+    .change h2 {
+      text-align: center;
+    }
+    .change {
+      margin-top: 1rem;
+      align-items: center;
+    }
+    .change p {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /*MVV SECTION*/
+    .MVV_section img {
+      width: 400px;
+    }
+    .MVV_section {
+      padding: 0px 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    .MVV_section {
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+    }
+    .karusel-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-padding: 1rem;
+    }
+    .MVV_grid {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease;
+    }
+    .MVV_grid > * {
+      flex: 0 0 80%;
+      width: 80%;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    /*TRUSPILOT SECTION*/
+
+    /*CREATOR SECTION*/
+  }
+  .Creator img {
+    height: 400px;
+  }
+  .Creator {
+    display: grid;
+    grid-template-columns: 1 fr 1fr;
+    padding: 2rem;
+  }
+  .creator_1 {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+  .creator_2 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    text-align: center;
+  }
+  .creator_3 {
+    grid-column: 2/3;
+    grid-row: 3/5;
+  }
+  .creator_4 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    text-align: center;
+  }
+
+  /* COMMUNITY SECTION*/
+  .Community h2 {
+    color: #fe4d34;
+  }
+  .Community {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+  }
+
+  /* FOOTER*/
+  .email-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .email-form input[type="email"] {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    min-width: 250px;
+    max-width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .email-form input[type="email"]:focus {
+    border-color: #000;
+  }
+  .email-form button {
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .email-form button:hover {
+    background-color: #333;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: auto;
+  }
+  .footer_logo {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .part_1 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .part_2 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .part_3 {
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
+  .part_1,
+  .part_2,
+  .part_3,
+  .footer_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+const { overskrift, tekst } = Astro.props;
+---
+
+<Layout>
+  <article class="MVV">
+    <h2>{overskrift}</h2>
+    <p>{tekst}</p>
+  </article>
+</Layout>
+<style>
+  article {
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  h2 {
+    text-align: center;
+  }
+  p {
+    width: 300px;
+  }
+</style>

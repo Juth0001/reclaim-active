@@ -1,0 +1,96 @@
+---
+// Import layout og props
+import Layout from "../layouts/Layout.astro";
+const { img, overskrift, tekst } = Astro.props;
+---
+
+<Layout>
+  <article class="MVV">
+    <img src={img} />
+
+    <!-- Dropdown-container -->
+    <div class="dropdown">
+      <button class="dropdown-toggle">
+        {overskrift}
+        <span class="arrow">▼</span>
+      </button>
+      <div class="dropdown-content">
+        <p>{tekst}</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- JS til toggle -->
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.parentElement.classList.toggle("open");
+        });
+      });
+    });
+  </script>
+</Layout>
+
+<style>
+  @media (max-width: 768px) {
+    .MVV {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    img {
+      height: 500px;
+      object-fit: cover;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      width: 100%;
+      margin-top: 1rem;
+      border: 1px solid #fe4d34;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* Knap med overskrift og pil */
+    .dropdown-toggle {
+      width: 300px;
+      padding: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: left;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .dropdown-toggle .arrow {
+      position: absolute;
+      right: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown.open .dropdown-toggle .arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Indhold (skjult som standard) */
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 1rem;
+    }
+
+    .dropdown.open .dropdown-content {
+      max-height: 200px;
+      padding: 1rem;
+    }
+  }
+</style>

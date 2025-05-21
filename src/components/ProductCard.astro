@@ -1,64 +1,89 @@
 ---
-import Layout from "../layouts/Layout.astro";
-const { img_1, img_2, name, link } = Astro.props;
+type Product = {
+  id: number;
+  name: string;
+  image: string;
+  imagescr: string;
+  price: number;
+  catagory: string;
+};
+
+const { product } = Astro.props;
 ---
 
-<Layout>
-  <article class="product">
-    <div class="image-wrapper">
-      <img src={img_1} alt="Produkt forside" class="default-img" />
-      <img src={img_2} alt="Produkt bagside" class="hover-img" />
-    </div>
-    <a href={link}><h2>{name}</h2></a>
+<section class="card-grid">
+  <article class="card">
+    <a href={`/product/${product.id}`}>
+      <img src={product.image_url} alt={product.name} />
+      <h3>{product.name}</h3>
+      <p>{product.price},-</p>
+      <button class="Basket_button">Add to Basket</button>
+    </a>
   </article>
-</Layout>
+</section>
 
 <style>
-  .product {
-    width: 225px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
+  @media (max-width: 768px) {
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+      margin-bottom: 1.5rem;
+    }
 
-  .image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-  }
-  p {
-    text-decoration: underline;
-  }
+    .card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
 
-  .image-wrapper img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.3s ease;
-  }
+    .card img {
+      max-width: 150px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+    }
 
-  .hover-img {
-    opacity: 0;
-  }
+    .card-content {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-  .image-wrapper:hover .hover-img {
-    opacity: 1;
-  }
+    .card h3 {
+      font-family: "Georgia", serif;
+      font-weight: bold;
+      color: #000000;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
 
-  .image-wrapper:hover .default-img {
-    opacity: 0;
-  }
+    .card p {
+      color: #000000;
+      margin-bottom: 0.5rem;
+    }
 
-  h2 {
-    margin-top: 1rem;
-    font-size: 1.1rem;
-  }
-  a {
-    text-decoration: underline;
-    color: #000000;
+    .Basket_button {
+      padding: 0.5rem 1rem;
+      margin: 0.5rem 1rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .Basket_button:hover {
+      background-color: #333;
+    }
   }
 </style>

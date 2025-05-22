@@ -75,13 +75,13 @@ import MvvCard2 from "../components/MvvCard2.astro";
     <img src="src/assets/creator1.png" class="creator_1" />
     <h2 class="creator_2">
       <strong
-        >“Reclaim Active was founded with a clear purpose: To cater to the unmet
-        needs of active modest women.”</strong
+        >“Reclaim Active was founded with a clear purpose: <br />To cater to the
+        unmet needs of active modest women.”</strong
       >
     </h2>
     <img src="src/assets/creator2.png" class="creator_3" />
     <p class="creator_4">
-      <strong>Sumeya The creator of Reclaim Active</strong>
+      <strong>Sumeya <br />The creator of <br />Reclaim Active</strong>
     </p>
   </section>
 
@@ -468,9 +468,6 @@ import MvvCard2 from "../components/MvvCard2.astro";
     }
 
     /*MVV SECTION*/
-    .MVV_section img {
-      width: 400px;
-    }
     .MVV_section {
       padding: 0px 20px;
       justify-content: center;
@@ -480,17 +477,57 @@ import MvvCard2 from "../components/MvvCard2.astro";
       margin-right: 0.5rem;
       margin-left: 0.5rem;
     }
-
     .MVV_grid {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 1rem;
-      scroll-snap-align: start;
-      transition: transform 0.3s ease;
+      display: grid;
+      grid-template-columns: repeat(3, 350px);
+      justify-content: center;
+      gap: 10%;
     }
-
     .MVV_hide {
       display: none;
+    }
+
+    /*TRUSPILOT SECTION*/
+
+    /*CREATOR SECTION*/
+    .Creator img {
+      height: auto;
+      width: 40%;
+      max-width: 300px;
+      display: block;
+      margin: 0 auto;
+    }
+    .Creator {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .creator_1 {
+      grid-column: 1/2;
+      grid-row: 2/5;
+    }
+    .creator_2 {
+      grid-column: 1/4;
+      grid-row: 1/2;
+      text-align: center;
+      font-size: 200%;
+      width: 700px;
+      margin: 0 auto;
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+    }
+    .creator_3 {
+      grid-column: 3/4;
+      grid-row: 2/5;
+    }
+    .creator_4 {
+      grid-column: 2/3;
+      grid-row: 3/4;
+      text-align: center;
+      font-size: 200%;
+      margin: 0 auto;
     }
 
     /* COMMUNITY SECTION*/

@@ -15,7 +15,12 @@ import MvvCard2 from "../components/MvvCard2.astro";
       </ul>
     </div>
     <div class="nav_logo">
-      <a href="/"><img src="/src/assets/logo.png" alt="Logo" /></a>
+      <a href="/index"
+        ><img src="/src/assets/logo.png" alt="Logo" id="logo_1" /></a
+      >
+      <a href="/index"
+        ><img src="src/assets/desktop_nav_name.png" id="logo_2" /></a
+      >
     </div>
   </header>
 
@@ -25,7 +30,7 @@ import MvvCard2 from "../components/MvvCard2.astro";
   </section>
 
   <section class="story">
-    <h1>The story behind Reclaim Active</h1>
+    <h1>THE STORY BEHIND RECLAIM ACTIVE</h1>
     <p>
       At Reclaim Active, our mission is to empower modest women with innovative
       activewear that honors both performance and personal values. We champion
@@ -37,7 +42,7 @@ import MvvCard2 from "../components/MvvCard2.astro";
   </section>
 
   <section class="change">
-    <h2>CHANGE IS NEEDED</h2>
+    <h2>Change Is Needed</h2>
     <p>
       This is just the beginning of revolutionizing the activewear industry to
       include and cater to modest women.
@@ -45,7 +50,7 @@ import MvvCard2 from "../components/MvvCard2.astro";
   </section>
 
   <section class="MVV_section">
-    <img src="src/assets/MVVabout.png" />
+    <img src="src/assets/MVVabout.png" class="MVV_hide" />
     <div class="karusel-wrapper">
       <div class="MVV_grid">
         <MvvCard2
@@ -100,6 +105,7 @@ import MvvCard2 from "../components/MvvCard2.astro";
       >
     </div>
   </section>
+
   <footer>
     <div class="footer_logo">
       <img src="src/assets/logo_footer.png" />
@@ -268,106 +274,299 @@ import MvvCard2 from "../components/MvvCard2.astro";
     /*TRUSPILOT SECTION*/
 
     /*CREATOR SECTION*/
-  }
-  .Creator img {
-    height: 400px;
-  }
-  .Creator {
-    display: grid;
-    grid-template-columns: 1 fr 1fr;
-    padding: 2rem;
-  }
-  .creator_1 {
-    grid-column: 1/2;
-    grid-row: 2/4;
-  }
-  .creator_2 {
-    grid-column: 1/3;
-    grid-row: 1/2;
-    text-align: center;
-  }
-  .creator_3 {
-    grid-column: 2/3;
-    grid-row: 3/5;
-  }
-  .creator_4 {
-    grid-column: 1/2;
-    grid-row: 4/5;
-    text-align: center;
-  }
 
-  /* COMMUNITY SECTION*/
-  .Community h2 {
-    color: #fe4d34;
-  }
-  .Community {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    text-align: center;
-  }
+    .Creator img {
+      height: 400px;
+    }
+    .Creator {
+      display: grid;
+      grid-template-columns: 1 fr 1fr;
+      padding: 2rem;
+    }
+    .creator_1 {
+      grid-column: 1/2;
+      grid-row: 2/4;
+    }
+    .creator_2 {
+      grid-column: 1/3;
+      grid-row: 1/2;
+      text-align: center;
+    }
+    .creator_3 {
+      grid-column: 2/3;
+      grid-row: 3/5;
+    }
+    .creator_4 {
+      grid-column: 1/2;
+      grid-row: 4/5;
+      text-align: center;
+    }
 
-  /* FOOTER*/
-  .email-form {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
+    /* COMMUNITY SECTION*/
+    .Community h2 {
+      color: #fe4d34;
+    }
+    .Community {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      text-align: center;
+    }
+
+    /* FOOTER*/
+    .email-form {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .email-form input[type="email"] {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 999px;
+      min-width: 250px;
+      max-width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-form input[type="email"]:focus {
+      border-color: #000;
+    }
+    .email-form button {
+      padding: 0.75rem 1.5rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .email-form button:hover {
+      background-color: #333;
+    }
+    footer {
+      display: grid;
+      grid-template-columns: 2;
+      grid-template-rows: auto;
+    }
+    .footer_logo {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+    .part_1 {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+    .part_2 {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+    .part_3 {
+      grid-column: 1/3;
+      grid-row: 3/4;
+    }
+    .part_1,
+    .part_2,
+    .part_3,
+    .footer_logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
-  .email-form input[type="email"] {
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 999px;
-    min-width: 250px;
-    max-width: 100%;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .email-form input[type="email"]:focus {
-    border-color: #000;
-  }
-  .email-form button {
-    padding: 0.75rem 1.5rem;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 999px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  .email-form button:hover {
-    background-color: #333;
-  }
-  footer {
-    display: grid;
-    grid-template-columns: 2;
-    grid-template-rows: auto;
-  }
-  .footer_logo {
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
-  .part_1 {
-    grid-column: 1/2;
-    grid-row: 2/3;
-  }
-  .part_2 {
-    grid-column: 2/3;
-    grid-row: 2/3;
-  }
-  .part_3 {
-    grid-column: 1/3;
-    grid-row: 3/4;
-  }
-  .part_1,
-  .part_2,
-  .part_3,
-  .footer_logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  @media (min-width: 1024px) {
+    /* HEADER/NAVIGATION*/
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 40px;
+      position: fixed;
+      top: 0;
+      z-index: 999;
+      width: 90%;
+    }
+    .topnav {
+      order: 2; /* sender navigationen til højre */
+      display: flex;
+      align-items: flex-end;
+      gap: 30px;
+    }
+    .nav_logo {
+      order: 1; /* sender logoet til venstre */
+      display: flex;
+      align-items: center;
+    }
+    #logo_1 {
+      height: 60px;
+    }
+    #logo_2 {
+      height: 20px;
+    }
+    .links {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .links li a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+    .burger {
+      display: none; /* skjul burger på desktop */
+    }
+
+    /*ABOUT US SECTION*/
+    .hero_about img {
+      max-width: 100%;
+    }
+    h1 {
+      text-align: center;
+      font-size: 250%;
+    }
+    .hero_about {
+      margin-top: 11rem;
+      align-items: center;
+      justify-self: center;
+      margin-bottom: 9rem;
+    }
+
+    /*STORY SECTION*/
+    .story h1 {
+      padding-top: 2rem;
+      font-size: 250%;
+    }
+    .story p {
+      padding-right: 4rem;
+      padding-left: 4rem;
+      font-size: 200%;
+      text-align: center;
+    }
+
+    /*CHANGE*/
+    .change h2 {
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 250%;
+    }
+    .change {
+      padding-top: 1rem;
+      align-items: center;
+    }
+    .change p {
+      padding: 2rem;
+      text-align: center;
+      font-size: 190%;
+    }
+
+    /*MVV SECTION*/
+    .MVV_section img {
+      width: 400px;
+    }
+    .MVV_section {
+      padding: 0px 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    .MVV_section {
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+    }
+
+    .MVV_grid {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease;
+    }
+
+    .MVV_hide {
+      display: none;
+    }
+
+    /* COMMUNITY SECTION*/
+    .Community h2 {
+      color: #fe4d34;
+    }
+    .Community {
+      padding-top: 50px;
+      padding-bottom: 150px;
+      text-align: center;
+    }
+    /* FOOTER*/
+    .email-form {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .email-form input[type="email"] {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 999px;
+      min-width: 250px;
+      max-width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-form input[type="email"]:focus {
+      border-color: #000;
+    }
+    .email-form button {
+      padding: 0.75rem 1.5rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .email-form button:hover {
+      background-color: #333;
+    }
+    footer {
+      display: grid;
+      grid-template-columns: 3;
+      grid-template-rows: auto;
+      margin-bottom: 2rem;
+    }
+    .footer_logo {
+      grid-column: 1/3;
+      grid-row: 1/2;
+      justify-self: center;
+    }
+    .part_1 {
+      grid-column: 3/4;
+      grid-row: 1/2;
+    }
+    .part_2 {
+      grid-column: 3/4;
+      grid-row: 2/3;
+    }
+    .part_3 {
+      grid-column: 1/3;
+      grid-row: 2/3;
+    }
+    .part_1,
+    .part_2,
+    .part_3,
+    .footer_logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
 </style>

@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProductCard from "../components/ProductCard.astro";
+import EventCard from "../components/EventCard.astro";
 
 // Definér produkt-type
 type Product = {
@@ -32,7 +33,7 @@ console.log(data);
         <li><a href="/aboutus">OUR STORY</a></li>
         <li><a href="/community">COMMUNITY</a></li>
         <li><a href="/product_list">SHOP</a></li>
-        <li><a href="/event_gallery">EVENTS</a></li>
+        <li><a href="/product_list#Events">EVENTS</a></li>
       </ul>
     </div>
     <div class="nav_logo">
@@ -44,7 +45,27 @@ console.log(data);
       >
     </div>
   </header>
+
+  <section class="product_header">
+    <div class="dropdown">
+      <h1>
+        Ready to Move?<br />We've Got You Covered
+      </h1>
+      <button class="dropdown-toggle">
+        <h4>SHOP BY COLLECTION</h4>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="dropdown-content">
+        <p><a href="#Hijab">Hijabs</a></p>
+        <p><a href="#Wear">Active Wear</a></p>
+        <p><a href="#Accesories">Accesories</a></p>
+        <p><a href="#Events">Events</a></p>
+      </div>
+    </div>
+  </section>
+
   <section class="main_grid">
+    <div id="Hijab"></div>
     <section class="Product">
       <h2>Hijabs</h2>
       <div class="Hijab-grid">
@@ -56,6 +77,7 @@ console.log(data);
         }
       </div>
     </section>
+    <div id="Wear"></div>
     <section class="Product">
       <h2>Active Wear</h2>
       <div class="Wear-grid">
@@ -73,6 +95,7 @@ console.log(data);
         }
       </div>
     </section>
+    <div id="Accesories"></div>
     <section class="Product">
       <h2>Accesories</h2>
       <div class="Accesories-grid">
@@ -86,14 +109,14 @@ console.log(data);
         }
       </div>
     </section>
-
+    <div id="Events"></div>
     <section class="Product">
       <h2>Events</h2>
       <div class="Events-grid">
         {
           data.map(
             (product) =>
-              product.catagory === "Event" && <ProductCard product={product} />
+              product.catagory === "Event" && <EventCard product={product} />
           )
         }
       </div>
@@ -165,10 +188,21 @@ console.log(data);
       navLinks?.classList.toggle("active");
     });
   </script>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.parentElement.classList.toggle("open");
+        });
+      });
+    });
+  </script>
 </Layout>
 
 <style>
   @media (max-width: 768px) {
+    /* HEADER/NAVIGATION*/
     /* HEADER/NAVIGATION*/
     header {
       display: grid;
@@ -189,6 +223,11 @@ console.log(data);
     .nav_logo img {
       height: 40px;
     }
+    #logo_1 {
+    }
+    #logo_2 {
+      display: none;
+    }
     .links {
       display: none;
       flex-direction: column;
@@ -200,7 +239,7 @@ console.log(data);
       left: 0;
       width: 80vw;
       height: 25%;
-
+      background-color: #fffdf2;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
       z-index: 1000;
       font-size: 1.2rem;
@@ -232,6 +271,65 @@ console.log(data);
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
+    .dropdown h1 {
+      display: flex;
+      justify-content: center; /* vandret */
+      align-items: center; /* lodret */
+
+      text-align: center;
+      font-size: 350%;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      width: 100%;
+      margin-top: 1rem;
+
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* Knap med overskrift og pil */
+    .dropdown-toggle {
+      width: 300px;
+      padding: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: left;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .dropdown-toggle .arrow {
+      position: absolute;
+      right: 1rem;
+      top: 40%;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown.open .dropdown-toggle .arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Indhold (skjult som standard) */
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 1rem;
+    }
+
+    .dropdown.open .dropdown-content {
+      max-height: 200px;
+      padding: 1rem;
+    }
+    .dropdown-content a {
+      color: #000;
+      text-decoration: underline;
+    }
+
     /* COMMUNITY SECTION*/
     .Community h2 {
       color: #fe4d34;
@@ -343,6 +441,7 @@ console.log(data);
       list-style: none;
       margin: 0;
       padding: 0;
+      background-color: #fffdf2;
     }
     .links li a {
       color: #000;
@@ -352,6 +451,91 @@ console.log(data);
     }
     .burger {
       display: none; /* skjul burger på desktop */
+    }
+
+    /*HEADER*/
+    .product_header {
+      height: 50vh;
+      margin-top: 8rem;
+      border-top: solid #fe4d34;
+      border-bottom: solid #fe4d34;
+      padding-top: 10%;
+      padding-bottom: 5%;
+    }
+    .dropdown h1 {
+      display: flex;
+      justify-content: center; /* vandret */
+      align-items: center; /* lodret */
+
+      text-align: center;
+      font-size: 350%;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      width: 100%;
+
+      text-align: center;
+    }
+
+    /* Knap med overskrift og pil */
+    .dropdown-toggle {
+      width: 300px;
+      padding: 0rem;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: left;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .dropdown-toggle .arrow {
+      position: absolute;
+      right: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown.open .dropdown-toggle .arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Indhold (skjult som standard) */
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 1rem;
+    }
+
+    .dropdown.open .dropdown-content {
+      max-height: 200px;
+      padding: 1rem;
+    }
+    .dropdown-content a {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    /*products section*/
+    .main_grid {
+      margin-top: 10%;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 250%;
+      margin-top: 15%;
+    }
+    .Hijab-grid,
+    .Wear-grid,
+    .Accesories-grid,
+    .Events-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 200px);
+      justify-content: center;
+      gap: 10%;
     }
 
     /* COMMUNITY SECTION*/

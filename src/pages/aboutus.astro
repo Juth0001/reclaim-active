@@ -65,7 +65,34 @@ import MvvCard2 from "../components/MvvCard2.astro";
     </div>
   </section>
 
-  <section class="trustpilot"></section>
+  <!-- Trustpilot 
+  <section class="trustpilot">
+    <h2 class="trustpilot-heading">What Our Community Says</h2>
+    <div class="trustpilot-wrapper">
+      <div class="trustpilot-card">
+        <p class="trustpilot-text">
+          “I finally found a hijab that stays in place while I run! Reclaim
+          Active changed the game for me.”
+        </p>
+        <div class="trustpilot-author">— Amina, Copenhagen</div>
+      </div>
+      <div class="trustpilot-card">
+        <p class="trustpilot-text">
+          “Their activewear gives me confidence at the gym. Stylish, functional,
+          and modest!”
+        </p>
+        <div class="trustpilot-author">— Fatima, Aarhus</div>
+      </div>
+      <div class="trustpilot-card">
+        <p class="trustpilot-text">
+          “High quality and thoughtful design. Reclaim Active listens to what we
+          actually need.”
+        </p>
+        <div class="trustpilot-author">— Sara, Odense</div>
+      </div>
+    </div>
+    <a href=""><h1>Trustpilot</h1></a>
+  </section> -->
 
   <section class="Creator">
     <img src="src/assets/creator1.png" class="creator_1" />
@@ -146,6 +173,7 @@ import MvvCard2 from "../components/MvvCard2.astro";
       navLinks?.classList.toggle("active");
     });
   </script>
+  <!-- Trustpilot script -->
 </Layout>
 <style>
   @media (max-width: 768px) {
@@ -269,7 +297,50 @@ import MvvCard2 from "../components/MvvCard2.astro";
       scroll-snap-stop: always;
     }
 
-    /*TRUSPILOT SECTION*/
+    /*TRUSPILOT SECTION
+    .trustpilottrustpilot-carousel {
+      padding: 4rem 1rem;
+      background-color: #fffdf2;
+    }
+
+    .trustpilot-heading {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #000;
+    }
+
+    .trustpilot-wrapper {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 1rem;
+    }
+
+    .trustpilot-card {
+      flex: 0 0 80%;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 2rem;
+      scroll-snap-align: start;
+      min-width: 280px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .trustpilot-text {
+      font-style: italic;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .trustpilot-author {
+      font-weight: bold;
+      color: #fe4d34;
+      font-size: 0.9rem;
+    }*/
 
     /*CREATOR SECTION*/
 
@@ -486,7 +557,27 @@ import MvvCard2 from "../components/MvvCard2.astro";
       display: none;
     }
 
-    /*TRUSPILOT SECTION*/
+    /*TRUSPILOT SECTION
+    .trustpilot-wrapper {
+      overflow-x: unset;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 0 4rem;
+    }
+
+    .trustpilot-card {
+      flex: unset;
+      min-width: unset;
+    }
+
+    .trustpilot-heading {
+      font-size: 2.5rem;
+    }
+
+    .trustpilot-text {
+      font-size: 1.1rem;
+    }*/
 
     /*CREATOR SECTION*/
     .Creator img {

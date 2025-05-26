@@ -41,19 +41,19 @@ import ProcessCard from "../components/ProcessCard.astro";
             img_1="src/assets/producter/active_hijab_steel.webp"
             img_2="src/assets/producter/product1_1.png"
             name="ACTIVE HIJAB"
-            link=""
+            link="/product_list#Hijab"
           />
           <IndexproductCard
             img_1="src/assets/producter/origin_zip_top.webp"
             img_2="src/assets/producter/origin_training_pants.webp"
             name="ACTIVE WEAR"
-            link=""
+            link="/product_list#Wear"
           />
           <IndexproductCard
             img_1="src/assets/producter/origin_daily_tote.webp"
             img_2="src/assets/producter/reclaim_posetaske.png"
             name="ACTIVE ACCESORIES"
-            link=""
+            link="/product_list#Accesories"
           />
         </div>
       </div>
@@ -97,17 +97,17 @@ import ProcessCard from "../components/ProcessCard.astro";
       <div class="karusel-wrapper">
         <div class="process_grid">
           <ProcessCard
-            img="src/assets/iconer/hjerte.png"
+            img="src/assets/hjerte.png"
             overskrift="Designed in Denmark"
             tekst="Our designs are trademark protected"
           />
           <ProcessCard
-            img="src/assets/iconer/planet.png"
+            img="src/assets/planet.png"
             overskrift="Ethically produced"
             tekst="We produce in a SEDEX certified facility in Turkey"
           />
           <ProcessCard
-            img="src/assets/iconer/skrib.png"
+            img="src/assets/skrib.png"
             overskrift="European shipping"
             tekst="We offer shipping to selected countries in Europe "
           />
@@ -533,13 +533,13 @@ import ProcessCard from "../components/ProcessCard.astro";
       list-style: none;
       margin: 0;
       padding: 0;
-      background-color: #fffdf2;
     }
     .links li a {
       color: #000;
       text-decoration: none;
       font-weight: bold;
       letter-spacing: 0.5px;
+      text-decoration: underline #fe4d34;
     }
     .burger {
       display: none; /* skjul burger på desktop */
@@ -760,26 +760,31 @@ import ProcessCard from "../components/ProcessCard.astro";
     }
     footer {
       display: grid;
-      grid-template-columns: 3;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: auto;
       margin-bottom: 2rem;
     }
     .footer_logo {
       grid-column: 1/3;
       grid-row: 1/2;
-      justify-self: center;
+      justify-self: left;
+      margin-top: 3rem;
+      margin-left: 3rem;
     }
     .part_1 {
       grid-column: 3/4;
-      grid-row: 1/2;
+      grid-row: 2/3;
+      text-align: center;
     }
     .part_2 {
-      grid-column: 3/4;
+      grid-column: 4/5;
       grid-row: 2/3;
+      text-align: center;
     }
     .part_3 {
-      grid-column: 1/3;
+      grid-column: 1/2;
       grid-row: 2/3;
+      text-align: center;
     }
     .part_1,
     .part_2,
@@ -788,7 +793,6 @@ import ProcessCard from "../components/ProcessCard.astro";
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
     }
   }
 </style>.

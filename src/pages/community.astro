@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import MvvCard2 from "../components/MvvCard2.astro";
 ---
 
 <Layout>
@@ -20,92 +19,54 @@ import MvvCard2 from "../components/MvvCard2.astro";
     </div>
   </header>
 
-  <section class="hero_about">
-    <h1>About Us</h1>
-    <img src="src/assets/AboutUsHero.png" />
-  </section>
-
-  <section class="story">
-    <h1>THE STORY BEHIND RECLAIM ACTIVE</h1>
-    <p>
-      At Reclaim Active, our mission is to empower modest women with innovative
-      activewear that honors both performance and personal values. We champion
-      the right to be active without compromise, creating high-quality hijabs
-      and apparel that support movement, comfort, and confidence. Together,
-      we’re redefining activewear to celebrate inclusivity, freedom, and
-      strength.
-    </p>
-  </section>
-
-  <section class="change">
-    <h2>Change Is Needed</h2>
-    <p>
-      This is just the beginning of revolutionizing the activewear industry to
-      include and cater to modest women.
-    </p>
-  </section>
-
-  <section class="MVV_section">
-    <img src="src/assets/MVVabout.png" class="MVV_hide" />
-    <div class="karusel-wrapper">
-      <div class="MVV_grid">
-        <MvvCard2
-          overskrift="Mission"
-          tekst="At Reclaim Active, our mission is to empower modest women with innovative activewear that honors both performance and personal values. We champion the right to be active without compromise, creating high-quality hijabs and apparel that support movement, comfort, and confidence. Together, we’re redefining activewear to celebrate inclusivity, freedom, and strength."
-        />
-        <MvvCard2
-          overskrift="Vision"
-          tekst="Our vision is to lead a global shift in activewear by making inclusivity the standard, not the exception. We strive to inspire and empower a community where every woman feels seen, supported, and free to pursue an active lifestyle—regardless of attire or background."
-        />
-        <MvvCard2
-          overskrift="Vallues"
-          tekst="Reclaim Active stands for inclusivity and empowerment, providing activewear that allows every woman to move freely and confidently. We drive innovation to create high-performance gear tailored to modest needs, fostering a supportive community where everyone belongs. Grounded in authenticity, we design with purpose, informed by the real experiences of the women we serve."
-        />
-      </div>
+  <section class="Community_info">
+    <h1>COMMUNITY</h1>
+    <div class="community_logo">
+      <img src="src/assets/collective_logo.png" />
+    </div>
+    <div class="community_text">
+      <h3>Movement Without Limits</h3>
+      <p>
+        Our mission is to create an inclusive, empowering community where women
+        can reclaim their health and well-being. Through Reclaim Collective, we
+        support women of all backgrounds—particularly those who embrace
+        modesty—to pursue an active lifestyle without limitations. Together, we
+        foster a space for growth, movement, and connection, helping every woman
+        find strength, confidence, and joy in wellness. We believe wellness
+        should reflect the diversity of every woman’s experience. From
+        thoughtfully designed activewear like sports hijabs to community-led
+        events, we create space for women to move freely, feel empowered, and
+        thrive—on their own terms.
+      </p>
     </div>
   </section>
 
-  <!-- Trustpilot 
-  <section class="trustpilot">
-    <h2 class="trustpilot-heading">What Our Community Says</h2>
-    <div class="trustpilot-wrapper">
-      <div class="trustpilot-card">
-        <p class="trustpilot-text">
-          “I finally found a hijab that stays in place while I run! Reclaim
-          Active changed the game for me.”
-        </p>
-        <div class="trustpilot-author">— Amina, Copenhagen</div>
-      </div>
-      <div class="trustpilot-card">
-        <p class="trustpilot-text">
-          “Their activewear gives me confidence at the gym. Stylish, functional,
-          and modest!”
-        </p>
-        <div class="trustpilot-author">— Fatima, Aarhus</div>
-      </div>
-      <div class="trustpilot-card">
-        <p class="trustpilot-text">
-          “High quality and thoughtful design. Reclaim Active listens to what we
-          actually need.”
-        </p>
-        <div class="trustpilot-author">— Sara, Odense</div>
-      </div>
+  <section class="Events">
+    <h1>Upcoming Events</h1>
+    <div class="event_grid">
+      <img src="src/assets/producter/Aalborg_community_run.png" />
+      <img src="src/assets/producter/running_essentials_event.png" />
     </div>
-    <a href=""><h1>Trustpilot</h1></a>
-  </section> -->
+    <a href="/event_gallery"
+      ><button class="Events_button">Our Events</button>
+    </a>
+  </section>
 
-  <section class="Creator">
-    <img src="src/assets/creator1.png" class="creator_1" />
-    <h2 class="creator_2">
-      <strong
-        >“Reclaim Active was founded with a clear purpose: <br />To cater to the
-        unmet needs of active modest women.”</strong
+  <section class="collective">
+    <h2>Stay Updated On</h2>
+    <h1>COLLECTIVE SOCIALS</h1>
+    <div>
+      <a
+        href="https://www.instagram.com/reclaimactive?igsh=MXFrZWxvank1YmpmeA%3D%3D"
+        target="_blank"><img src="src/assets/instagram.png" /></a
       >
-    </h2>
-    <img src="src/assets/creator2.png" class="creator_3" />
-    <p class="creator_4">
-      <strong>Sumeya <br />The creator of <br />Reclaim Active</strong>
-    </p>
+      <a
+        href="https://www.facebook.com/profile.php?id=61563474538002"
+        target="_blank"
+      >
+        <img src="src/assets/facebook.png" /></a
+      >
+    </div>
   </section>
 
   <section class="Community">
@@ -173,11 +134,17 @@ import MvvCard2 from "../components/MvvCard2.astro";
       navLinks?.classList.toggle("active");
     });
   </script>
-  <!-- Trustpilot script -->
 </Layout>
+
 <style>
+  body {
+    background: linear-gradient(200deg, #fffdf2 0%, #e6f2e2 50%, #fe4d34 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
   @media (max-width: 768px) {
-    /* HEADER/NAVIGATION*/
+    /*HEADER*/
     header {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -232,143 +199,77 @@ import MvvCard2 from "../components/MvvCard2.astro";
     #logo_2 {
       display: none;
     }
-    /*ABOUT US SECTION*/
-    .hero_about img {
-      max-width: 450px;
-    }
-    h1 {
+
+    /*COMMUNITY INFO SECTION*/
+    .Community_info h1 {
+      padding-top: 50px;
+      padding-bottom: 10px;
       text-align: center;
     }
-    .hero_about {
-      margin-top: 8rem;
+    .Community_info img {
+      width: 100%;
+      margin: 1rem;
+    }
+    .Community_info {
       align-items: center;
+      justify-content: center;
     }
-
-    /*STORY SECTION*/
-    .story h1 {
-      padding-top: 2rem;
-    }
-    .story p {
-      padding: 2rem;
-    }
-
-    /*CHANGE*/
-    .change h2 {
+    .community_text {
       text-align: center;
+      justify-content: center;
     }
-    .change {
-      margin-top: 1rem;
-      align-items: center;
+    /*COLLECTIVE SECTION*/
+    .collective h2 {
+      color: #fe4d34;
     }
-    .change p {
-      padding: 2rem;
+    .collective {
+      padding-top: 100px;
+      padding-bottom: 100px;
       text-align: center;
     }
 
-    /*MVV SECTION*/
-    .MVV_section img {
-      width: 400px;
+    .collective img {
+      width: 150px;
+      margin: 1rem;
     }
-    .MVV_section {
-      padding: 0px 20px;
+
+    /*EVENT SECTION*/
+    .Events h1 {
+      color: #fe4d34;
+    }
+    .Events {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      text-align: center;
+    }
+    .event_grid {
+      margin: 0 auto;
+      padding: 20px;
       justify-content: center;
       align-items: center;
     }
-    .MVV_section {
-      margin-right: 0.5rem;
-      margin-left: 0.5rem;
-    }
-    .karusel-wrapper {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scroll-padding: 1rem;
-    }
-    .MVV_grid {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 1rem;
-      scroll-snap-align: start;
-      transition: transform 0.3s ease;
-    }
-    .MVV_grid > * {
-      flex: 0 0 80%;
-      width: 80%;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-    }
 
-    /*TRUSPILOT SECTION
-    .trustpilottrustpilot-carousel {
-      padding: 4rem 1rem;
-      background-color: #fffdf2;
+    .event_grid img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      padding-bottom: 1rem;
     }
-
-    .trustpilot-heading {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: #000;
-    }
-
-    .trustpilot-wrapper {
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: 0 1rem;
-    }
-
-    .trustpilot-card {
-      flex: 0 0 80%;
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 20px;
-      padding: 2rem;
-      scroll-snap-align: start;
-      min-width: 280px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
-    .trustpilot-text {
-      font-style: italic;
-      margin-bottom: 1rem;
+    .Events_button {
+      padding: 0.75rem 1.5rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
       font-size: 1rem;
-      line-height: 1.6;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
 
-    .trustpilot-author {
-      font-weight: bold;
-      color: #fe4d34;
-      font-size: 0.9rem;
-    }*/
-
-    /*CREATOR SECTION*/
-
-    .Creator img {
-      height: 400px;
-    }
-    .Creator {
-      display: grid;
-      grid-template-columns: 1 fr 1fr;
-      padding: 2rem;
-    }
-    .creator_1 {
-      grid-column: 1/2;
-      grid-row: 2/4;
-    }
-    .creator_2 {
-      grid-column: 1/3;
-      grid-row: 1/2;
-      text-align: center;
-    }
-    .creator_3 {
-      grid-column: 2/3;
-      grid-row: 3/5;
-    }
-    .creator_4 {
-      grid-column: 1/2;
-      grid-row: 4/5;
-      text-align: center;
+    .Events_button:hover {
+      background-color: #333;
     }
 
     /* COMMUNITY SECTION*/
@@ -381,7 +282,7 @@ import MvvCard2 from "../components/MvvCard2.astro";
       text-align: center;
     }
 
-    /* FOOTER*/
+    /*FOOTER*/
     .email-form {
       display: flex;
       justify-content: center;
@@ -389,6 +290,7 @@ import MvvCard2 from "../components/MvvCard2.astro";
       margin-top: 1.5rem;
       flex-wrap: wrap;
     }
+
     .email-form input[type="email"] {
       padding: 0.75rem 1rem;
       font-size: 1rem;
@@ -399,9 +301,11 @@ import MvvCard2 from "../components/MvvCard2.astro";
       outline: none;
       transition: border-color 0.2s;
     }
+
     .email-form input[type="email"]:focus {
       border-color: #000;
     }
+
     .email-form button {
       padding: 0.75rem 1.5rem;
       background-color: #000;
@@ -412,6 +316,7 @@ import MvvCard2 from "../components/MvvCard2.astro";
       cursor: pointer;
       transition: background-color 0.3s;
     }
+
     .email-form button:hover {
       background-color: #333;
     }
@@ -494,130 +399,105 @@ import MvvCard2 from "../components/MvvCard2.astro";
       display: none; /* skjul burger på desktop */
     }
 
-    /*ABOUT US SECTION*/
-    .hero_about img {
-      max-width: 100%;
+    /*COMMUNITY INFO SECTION*/
+    .Community_info {
+      margin-top: 8rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .Community_info h1 {
+      padding-top: 50px;
+      padding-bottom: 10px;
+      text-align: center;
+      font-size: 250%;
+    }
+    .Community_info img {
+      width: 80%;
+      margin: 2rem;
+    }
+    .Community_info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .community_text {
+      text-align: center;
+      justify-content: center;
+    }
+    .community_text {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+    .community_logo {
+      grid-column: 1/2;
+      grid-row: 2/3;
     }
     h1 {
-      text-align: center;
-      font-size: 250%;
-    }
-    .hero_about {
-      margin-top: 11rem;
-      align-items: center;
-      justify-self: center;
-      margin-bottom: 9rem;
-    }
-
-    /*STORY SECTION*/
-    .story h1 {
-      padding-top: 2rem;
-      font-size: 250%;
-    }
-    .story p {
-      padding-right: 4rem;
-      padding-left: 4rem;
-      font-size: 200%;
-      text-align: center;
-    }
-
-    /*CHANGE*/
-    .change h2 {
-      text-align: center;
-      margin-top: 4rem;
-      font-size: 250%;
-    }
-    .change {
-      padding-top: 1rem;
-      align-items: center;
-    }
-    .change p {
-      padding: 2rem;
-      text-align: center;
-      font-size: 190%;
-    }
-
-    /*MVV SECTION*/
-    .MVV_section {
-      padding: 0px 20px;
-      justify-content: center;
-      align-items: center;
-    }
-    .MVV_section {
-      margin-right: 0.5rem;
-      margin-left: 0.5rem;
-    }
-    .MVV_grid {
-      display: grid;
-      grid-template-columns: repeat(3, 350px);
-      justify-content: center;
-      gap: 10%;
-    }
-    .MVV_hide {
-      display: none;
-    }
-
-    /*TRUSPILOT SECTION
-    .trustpilot-wrapper {
-      overflow-x: unset;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      padding: 0 4rem;
-    }
-
-    .trustpilot-card {
-      flex: unset;
-      min-width: unset;
-    }
-
-    .trustpilot-heading {
-      font-size: 2.5rem;
-    }
-
-    .trustpilot-text {
-      font-size: 1.1rem;
-    }*/
-
-    /*CREATOR SECTION*/
-    .Creator img {
-      height: auto;
-      width: 40%;
-      max-width: 300px;
-      display: block;
-      margin: 0 auto;
-    }
-    .Creator {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      margin: 2rem;
-      justify-content: center;
-      align-items: center;
-    }
-    .creator_1 {
-      grid-column: 1/2;
-      grid-row: 2/5;
-    }
-    .creator_2 {
-      grid-column: 1/4;
+      grid-column: 1/3;
       grid-row: 1/2;
-      text-align: center;
-      font-size: 200%;
-      width: 700px;
-      margin: 0 auto;
-      padding-top: 3rem;
-      padding-bottom: 2rem;
     }
-    .creator_3 {
-      grid-column: 3/4;
-      grid-row: 2/5;
+    .community_text h3 {
+      font-size: 175%;
     }
-    .creator_4 {
-      grid-column: 2/3;
-      grid-row: 3/4;
+    .community_text p {
+      font-size: 150%;
+      margin-right: 2rem;
+    }
+
+    /*EVENT SECTION*/
+    .Events h1 {
+      color: #fe4d34;
+      font-size: 250%;
+    }
+    .Events {
+      padding-top: 100px;
+      padding-bottom: 100px;
       text-align: center;
-      font-size: 200%;
+    }
+    .event_grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
       margin: 0 auto;
+      padding: 20px;
+      max-width: 1000px; /* eller hvad der passer til dit layout */
+      justify-content: center;
+      align-items: center;
+    }
+    .event_grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      padding-bottom: 1rem;
+    }
+    .Events_button {
+      padding: 0.75rem 1.5rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .Events_button:hover {
+      background-color: #333;
+    }
+
+    /*COLLECTIVE SECTION*/
+    .collective h2 {
+      color: #fe4d34;
+    }
+    .collective {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      text-align: center;
+    }
+
+    .collective img {
+      width: auto;
+      margin: 1rem;
     }
 
     /* COMMUNITY SECTION*/

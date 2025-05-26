@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+const { img_1, img_2, name, link } = Astro.props;
+---
+
+<Layout>
+  <article class="product">
+    <div class="image-wrapper">
+      <img src={img_1} alt="Produkt forside" class="default-img" />
+      <img src={img_2} alt="Produkt bagside" class="hover-img" />
+    </div>
+    <a href={link}><h2>{name}</h2></a>
+  </article>
+</Layout>
+
+<style>
+  .product {
+    width: 225px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+  p {
+    text-decoration: underline;
+  }
+
+  .image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-img {
+    opacity: 0;
+  }
+
+  .image-wrapper:hover .hover-img {
+    opacity: 1;
+  }
+
+  .image-wrapper:hover .default-img {
+    opacity: 0;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+  a {
+    text-decoration: underline;
+    color: #000000;
+  }
+</style>

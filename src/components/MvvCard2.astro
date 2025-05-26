@@ -18,8 +18,15 @@ const { overskrift, tekst } = Astro.props;
 
   h2 {
     text-align: center;
+    font-size: 190%;
   }
   p {
     width: 300px;
+  }
+  @media (min-width: 1024px) {
+    p {
+      width: 100%;
+      font-size: 150%;
+    }
   }
 </style>

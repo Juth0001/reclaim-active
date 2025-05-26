@@ -1,0 +1,619 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import EventCard from "../components/EventCard.astro";
+
+// Definér produkt-type
+type Product = {
+  id: number;
+  name: string;
+  image: string;
+  imagescr: string;
+  catagory: string;
+};
+
+const url =
+  "https://varpkyfvejupvanoejdn.supabase.co/rest/v1/Reclaim_producter?select=*";
+
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZhcnBreWZ2ZWp1cHZhbm9lamRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMTI3MjMsImV4cCI6MjA2Mjg4ODcyM30.UrzGK_Fl5sBW1748bBH1OZ0ONA1yeuPaa9n8eCnz3-0";
+
+const options = { headers: { apikey: key } };
+
+// Fetch produkter
+const data = await fetch(url, options).then((res) => res.json());
+console.log(data);
+---
+
+<Layout>
+  <header>
+    <div class="topnav">
+      <div class="burger" id="burger">☰</div>
+      <ul class="links" id="navLinks">
+        <li><a href="/aboutus">OUR STORY</a></li>
+        <li><a href="/community">COMMUNITY</a></li>
+        <li><a href="/product_list">SHOP</a></li>
+        <li><a href="/product_list#Events">EVENTS</a></li>
+      </ul>
+    </div>
+    <div class="nav_logo">
+      <a href="/"><img src="/src/assets/logo.png" alt="Logo" id="logo_1" /></a>
+      <a href="/"><img src="src/assets/desktop_nav_name.png" id="logo_2" /></a>
+    </div>
+  </header>
+
+  <section class="product_header">
+    <div class="dropdown">
+      <h1>
+        Ready to Move?<br />We've Got You Covered
+      </h1>
+      <button class="dropdown-toggle">
+        <h4>SHOP BY COLLECTION</h4>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="dropdown-content">
+        <p><a href="#Hijab">Hijabs</a></p>
+        <p><a href="#Wear">Active Wear</a></p>
+        <p><a href="#Accesories">Accesories</a></p>
+        <p><a href="#Events">Events</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="main_grid">
+    <div id="Hijab"></div>
+    <section class="Product">
+      <h2>Hijabs</h2>
+      <div class="Hijab-grid">
+        {
+          data.map(
+            (product) =>
+              product.catagory === "Hijab" && <ProductCard product={product} />
+          )
+        }
+      </div>
+    </section>
+    <div id="Wear"></div>
+    <section class="Product">
+      <h2>Active Wear</h2>
+      <div class="Wear-grid">
+        {
+          data.map(
+            (product) =>
+              product.catagory === "Top" && <ProductCard product={product} />
+          )
+        }
+        {
+          data.map(
+            (product) =>
+              product.catagory === "Pants" && <ProductCard product={product} />
+          )
+        }
+      </div>
+    </section>
+    <div id="Accesories"></div>
+    <section class="Product">
+      <h2>Accesories</h2>
+      <div class="Accesories-grid">
+        {
+          data.map(
+            (product) =>
+              product.catagory === "Accesories" && (
+                <ProductCard product={product} />
+              )
+          )
+        }
+      </div>
+    </section>
+    <div id="Events"></div>
+    <section class="Product">
+      <h2>Events</h2>
+      <div class="Events-grid">
+        {
+          data.map(
+            (product) =>
+              product.catagory === "Event" && <EventCard product={product} />
+          )
+        }
+      </div>
+    </section>
+  </section>
+
+  <section class="Community">
+    <h2>Stay Updated On</h2>
+    <h1>COLLECTIVE SOCIALS</h1>
+    <div>
+      <a
+        href="https://www.instagram.com/reclaimactive?igsh=MXFrZWxvank1YmpmeA%3D%3D"
+        target="_blank"><img src="src/assets/instagram_icon.png" /></a
+      >
+      <a
+        href="https://www.facebook.com/profile.php?id=61563474538002"
+        target="_blank"
+      >
+        <img src="src/assets/facebook_icon.png" /></a
+      >
+      <a
+        href="https://www.tiktok.com/@reclaimactive?_t=8p1fMl26r0z&_r=1"
+        target="_blank"><img src="src/assets/tiktok_icon.png" /></a
+      >
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer_logo">
+      <img src="src/assets/logo_footer.png" />
+    </div>
+
+    <div class="part_1">
+      <h4>INFORMATION</h4>
+      <p>FAQ & Contact</p>
+      <p>Priacy & Cookie policy</p>
+    </div>
+    <div class="part_2">
+      <h4>CONTACT US</h4>
+      <p>CVR : 38572377</p>
+      <p>info@reclaimeactive.com</p>
+      <p>2025 Reclaime Active All rights reserved</p>
+    </div>
+    <div class="part_3">
+      <h4>NEWSLETTER</h4>
+      <p>
+        Join our email list and get alerted of new launches, special offers and
+        restocks.
+      </p>
+      <form class="email-form">
+        <label for="email">Tilmeld dig vores nyhedsbrev:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Indtast din e-mail"
+          required
+        />
+        <button type="submit">Tilmeld</button>
+      </form>
+    </div>
+  </footer>
+
+  <script is:inline>
+    const burger = document.getElementById("burger");
+    const navLinks = document.getElementById("navLinks");
+
+    burger?.addEventListener("click", () => {
+      navLinks?.classList.toggle("active");
+    });
+  </script>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.parentElement.classList.toggle("open");
+        });
+      });
+    });
+  </script>
+</Layout>
+
+<style>
+  @media (max-width: 768px) {
+    /* HEADER/NAVIGATION*/
+    /* HEADER/NAVIGATION*/
+    header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    .topnav {
+      grid-column: 1 / 2;
+      display: flex;
+      align-items: center;
+    }
+    .nav_logo {
+      grid-column: 3 / 4;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .nav_logo img {
+      height: 40px;
+    }
+    #logo_1 {
+    }
+    #logo_2 {
+      display: none;
+    }
+    .links {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      list-style: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80vw;
+      height: 25%;
+      background-color: #fffdf2;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      font-size: 1.2rem;
+      gap: 20px;
+    }
+    .links.active {
+      display: flex;
+    }
+    .links li a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .burger {
+      display: block;
+      font-size: 32px;
+      cursor: pointer;
+      z-index: 1100;
+      padding: 10px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+    .Hijab-grid,
+    .Wear-grid,
+    .Accesories-grid,
+    .Events-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .dropdown h1 {
+      display: flex;
+      justify-content: center; /* vandret */
+      align-items: center; /* lodret */
+
+      text-align: center;
+      font-size: 350%;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      width: 100%;
+      margin-top: 1rem;
+
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* Knap med overskrift og pil */
+    .dropdown-toggle {
+      width: 300px;
+      padding: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: left;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .dropdown-toggle .arrow {
+      position: absolute;
+      right: 1rem;
+      top: 40%;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown.open .dropdown-toggle .arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Indhold (skjult som standard) */
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 1rem;
+    }
+
+    .dropdown.open .dropdown-content {
+      max-height: 200px;
+      padding: 1rem;
+    }
+    .dropdown-content a {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    /* COMMUNITY SECTION*/
+    .Community h2 {
+      color: #fe4d34;
+    }
+    .Community {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      text-align: center;
+    }
+
+    /* FOOTER*/
+    .email-form {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .email-form input[type="email"] {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 999px;
+      min-width: 250px;
+      max-width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-form input[type="email"]:focus {
+      border-color: #000;
+    }
+    .email-form button {
+      padding: 0.75rem 1.5rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .email-form button:hover {
+      background-color: #333;
+    }
+    footer {
+      display: grid;
+      grid-template-columns: 2;
+      grid-template-rows: auto;
+    }
+    .footer_logo {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+    .part_1 {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+    .part_2 {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+    .part_3 {
+      grid-column: 1/3;
+      grid-row: 3/4;
+    }
+    .part_1,
+    .part_2,
+    .part_3,
+    .footer_logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  @media (min-width: 1024px) {
+    /* HEADER/NAVIGATION*/
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 40px;
+      position: fixed;
+      top: 0;
+      z-index: 999;
+      width: 90%;
+    }
+    .topnav {
+      order: 2; /* sender navigationen til højre */
+      display: flex;
+      align-items: flex-end;
+      gap: 30px;
+    }
+    .nav_logo {
+      order: 1; /* sender logoet til venstre */
+      display: flex;
+      align-items: center;
+    }
+    #logo_1 {
+      height: 60px;
+    }
+    #logo_2 {
+      height: 20px;
+    }
+    .links {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background-color: #fffdf2;
+    }
+    .links li a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+    .burger {
+      display: none; /* skjul burger på desktop */
+    }
+
+    /*HEADER*/
+    .product_header {
+      height: 50vh;
+      margin-top: 8rem;
+      border-top: solid #fe4d34;
+      border-bottom: solid #fe4d34;
+      padding-top: 10%;
+      padding-bottom: 5%;
+    }
+    .dropdown h1 {
+      display: flex;
+      justify-content: center; /* vandret */
+      align-items: center; /* lodret */
+
+      text-align: center;
+      font-size: 350%;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      width: 100%;
+
+      text-align: center;
+    }
+
+    /* Knap med overskrift og pil */
+    .dropdown-toggle {
+      width: 300px;
+      padding: 0rem;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: left;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .dropdown-toggle .arrow {
+      position: absolute;
+      right: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown.open .dropdown-toggle .arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Indhold (skjult som standard) */
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 1rem;
+    }
+
+    .dropdown.open .dropdown-content {
+      max-height: 200px;
+      padding: 1rem;
+    }
+    .dropdown-content a {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    /*products section*/
+    .main_grid {
+      margin-top: 10%;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 250%;
+      margin-top: 15%;
+    }
+    .Hijab-grid,
+    .Wear-grid,
+    .Accesories-grid,
+    .Events-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 200px);
+      justify-content: center;
+      gap: 10%;
+    }
+
+    /* COMMUNITY SECTION*/
+    .Community h2 {
+      color: #fe4d34;
+    }
+    .Community {
+      padding-top: 50px;
+      padding-bottom: 150px;
+      text-align: center;
+    }
+
+    /* FOOTER*/
+    .email-form {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .email-form input[type="email"] {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 999px;
+      min-width: 250px;
+      max-width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-form input[type="email"]:focus {
+      border-color: #000;
+    }
+    .email-form button {
+      padding: 0.75rem 1.5rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .email-form button:hover {
+      background-color: #333;
+    }
+    footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      margin-bottom: 2rem;
+    }
+    .footer_logo {
+      grid-column: 1/3;
+      grid-row: 1/2;
+      justify-self: left;
+      margin-top: 3rem;
+      margin-left: 3rem;
+    }
+    .part_1 {
+      grid-column: 3/4;
+      grid-row: 2/3;
+      text-align: center;
+    }
+    .part_2 {
+      grid-column: 4/5;
+      grid-row: 2/3;
+      text-align: center;
+    }
+    .part_3 {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      text-align: center;
+    }
+    .part_1,
+    .part_2,
+    .part_3,
+    .footer_logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>.
+

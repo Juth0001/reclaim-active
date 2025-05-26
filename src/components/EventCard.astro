@@ -4,7 +4,6 @@ type Product = {
   name: string;
   image: string;
   imagescr: string;
-  price: number;
   catagory: string;
 };
 
@@ -16,8 +15,6 @@ const { product } = Astro.props;
     <a href={`/product/${product.id}`}>
       <img src={product.image_url} alt={product.name} />
       <h3>{product.name}</h3>
-      <p>{product.Color}</p>
-      <strong><p>{product.price} DKK</p></strong>
       <button class="Basket_button">Add to Basket</button>
     </a>
   </article>

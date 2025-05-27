@@ -14,7 +14,7 @@ const { product } = Astro.props;
 <section class="card-grid">
   <article class="card">
     <a href={`/product/${product.id}`}>
-      <img src={product.image_url} alt={product.name} />
+      <img src={product.image_url} alt={product.name} alt="product_img" />
       <h3>{product.name}</h3>
       <p>{product.Color}</p>
       <strong><p>{product.price} DKK</p></strong>

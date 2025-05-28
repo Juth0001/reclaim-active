@@ -66,151 +66,143 @@ console.log(data);
   <section class="main_grid">
     <div id="Hijab"></div>
     <section class="Product">
-      <p>
-        Hijabs<p2>
-          <div class="Hijab-grid">
-            {
-              data.map(
-                (product) =>
-                  product.catagory === "Hijab" && (
-                    <ProductCard product={product} />
-                  )
-              )
-            }
-          </div>
-        </p2>
-        <div id="Wear"></div>
-        <section class="Product">
-          <p>Active Wear</p>
-          <div class="Wear-grid">
-            {
-              data.map(
-                (product) =>
-                  product.catagory === "Top" && (
-                    <ProductCard product={product} />
-                  )
-              )
-            }
-            {
-              data.map(
-                (product) =>
-                  product.catagory === "Pants" && (
-                    <ProductCard product={product} />
-                  )
-              )
-            }
-          </div>
-        </section>
-        <div id="Accesories"></div>
-        <section class="Product">
-          <p>Accesories</p>
-          <div class="Accesories-grid">
-            {
-              data.map(
-                (product) =>
-                  product.catagory === "Accesories" && (
-                    <ProductCard product={product} />
-                  )
-              )
-            }
-          </div>
-        </section>
-        <div id="Events"></div>
-        <section class="Product">
-          <p>Events</p>
-          <div class="Events-grid">
-            {
-              data.map(
-                (product) =>
-                  product.catagory === "Event" && (
-                    <EventCard product={product} />
-                  )
-              )
-            }
-          </div>
-        </section>
-      </p>
+      <p>Hijabs</p>
+      <div class="Hijab-grid">
+        {
+          data.map(
+            (product) =>
+              product.catagory === "Hijab" && <ProductCard product={product} />
+          )
+        }
+      </div>
+
+      <div id="Wear"></div>
+      <section class="Product">
+        <p>Active Wear</p>
+        <div class="Wear-grid">
+          {
+            data.map(
+              (product) =>
+                product.catagory === "Top" && <ProductCard product={product} />
+            )
+          }
+          {
+            data.map(
+              (product) =>
+                product.catagory === "Pants" && (
+                  <ProductCard product={product} />
+                )
+            )
+          }
+        </div>
+      </section>
+      <div id="Accesories"></div>
+      <section class="Product">
+        <p>Accesories</p>
+        <div class="Accesories-grid">
+          {
+            data.map(
+              (product) =>
+                product.catagory === "Accesories" && (
+                  <ProductCard product={product} />
+                )
+            )
+          }
+        </div>
+      </section>
+      <div id="Events"></div>
+      <section class="Product">
+        <p>Events</p>
+        <div class="Events-grid">
+          {
+            data.map(
+              (product) =>
+                product.catagory === "Event" && <EventCard product={product} />
+            )
+          }
+        </div>
+      </section>
     </section>
-
-    <section class="Community">
-      <h2>Stay Updated On</h2>
-      <h1>COLLECTIVE SOCIALS</h1>
-      <div>
-        <a
-          href="https://www.instagram.com/reclaimactive?igsh=MXFrZWxvank1YmpmeA%3D%3D"
-          target="_blank"
-          ><img src="/images/instagram_icon.png" alt="insta_Logo" /></a
-        >
-        <a
-          href="https://www.facebook.com/profile.php?id=61563474538002"
-          target="_blank"
-        >
-          <img src="/images/facebook_icon.png" alt="face_Logo" /></a
-        >
-        <a
-          href="https://www.tiktok.com/@reclaimactive?_t=8p1fMl26r0z&_r=1"
-          target="_blank"
-          ><img src="/images/tiktok_icon.png" alt="tiktok_Logo" /></a
-        >
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer_logo">
-        <img src="/images/logo_footer.png" alt="logo" />
-      </div>
-
-      <div class="part_1">
-        <h4>INFORMATION</h4>
-        <p>FAQ & Contact</p>
-        <p>Priacy & Cookie policy</p>
-      </div>
-      <div class="part_2" id="contact">
-        <h4>CONTACT US</h4>
-        <p>CVR : 38572377</p>
-        <p>info@reclaimeactive.com</p>
-        <p>2025 Reclaime Active All rights reserved</p>
-      </div>
-      <div class="part_3">
-        <h4>NEWSLETTER</h4>
-        <p>
-          Join our email list and get alerted of new launches, special offers
-          and restocks.
-        </p>
-        <form class="email-form">
-          <label for="email">Tilmeld dig vores nyhedsbrev:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Indtast din e-mail"
-            required
-          />
-          <button type="submit">Tilmeld</button>
-        </form>
-      </div>
-    </footer>
   </section>
 
-  <script is:inline>
-    const burger = document.getElementById("burger");
-    const navLinks = document.getElementById("navLinks");
+  <section class="Community">
+    <h2>Stay Updated On</h2>
+    <h1>COLLECTIVE SOCIALS</h1>
+    <div>
+      <a
+        href="https://www.instagram.com/reclaimactive?igsh=MXFrZWxvank1YmpmeA%3D%3D"
+        target="_blank"
+        ><img src="/images/instagram_icon.png" alt="insta_Logo" /></a
+      >
+      <a
+        href="https://www.facebook.com/profile.php?id=61563474538002"
+        target="_blank"
+      >
+        <img src="/images/facebook_icon.png" alt="face_Logo" /></a
+      >
+      <a
+        href="https://www.tiktok.com/@reclaimactive?_t=8p1fMl26r0z&_r=1"
+        target="_blank"
+        ><img src="/images/tiktok_icon.png" alt="tiktok_Logo" /></a
+      >
+    </div>
+  </section>
 
-    burger?.addEventListener("click", () => {
-      navLinks?.classList.toggle("active");
-    });
-  </script>
+  <footer>
+    <div class="footer_logo">
+      <img src="/images/logo_footer.png" alt="logo" />
+    </div>
 
-  <script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          btn.parentElement.classList.toggle("open");
-        });
+    <div class="part_1">
+      <h4>INFORMATION</h4>
+      <p>FAQ & Contact</p>
+      <p>Priacy & Cookie policy</p>
+    </div>
+    <div class="part_2" id="contact">
+      <h4>CONTACT US</h4>
+      <p>CVR : 38572377</p>
+      <p>info@reclaimeactive.com</p>
+      <p>2025 Reclaime Active All rights reserved</p>
+    </div>
+    <div class="part_3">
+      <h4>NEWSLETTER</h4>
+      <p>
+        Join our email list and get alerted of new launches, special offers and
+        restocks.
+      </p>
+      <form class="email-form">
+        <label for="email">Tilmeld dig vores nyhedsbrev:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Indtast din e-mail"
+          required
+        />
+        <button type="submit">Tilmeld</button>
+      </form>
+    </div>
+  </footer>
+</Layout>
+
+<script is:inline>
+  const burger = document.getElementById("burger");
+  const navLinks = document.getElementById("navLinks");
+
+  burger?.addEventListener("click", () => {
+    navLinks?.classList.toggle("active");
+  });
+</script>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("open");
       });
     });
-  </script>
-</Layout>
+  });
+</script>
 
 <style>
   @media (max-width: 768px) {

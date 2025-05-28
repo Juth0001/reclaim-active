@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const { img_1, img_2, name, link } = Astro.props;
+const { img_1, img_2, name, link, price } = Astro.props;
 ---
 
 <Layout>
@@ -10,6 +10,7 @@ const { img_1, img_2, name, link } = Astro.props;
       <img src={img_2} alt="Produkt bagside" class="hover-img" />
     </div>
     <a href={link}><h2>{name}</h2></a>
+    <h3>{price}</h3>
   </article>
 </Layout>
 

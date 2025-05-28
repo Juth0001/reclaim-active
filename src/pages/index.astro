@@ -10,10 +10,11 @@ import ProcessCard from "../components/ProcessCard.astro";
     <div class="topnav">
       <div class="burger" id="burger">☰</div>
       <ul class="links" id="navLinks">
+        <li><a href="/product_list">SHOP</a></li>
+        <li><a href="/product_list#Events">EVENTS</a></li>
         <li><a href="/aboutus">OUR STORY</a></li>
         <li><a href="/community">COMMUNITY</a></li>
-        <li><a href="/product_list">SHOP</a></li>
-        <li><a href="/product_list#Event">EVENTS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
       </ul>
     </div>
     <div class="nav_logo">
@@ -44,20 +45,26 @@ import ProcessCard from "../components/ProcessCard.astro";
             img_2="/images/producter/product1_1.png"
             name="ACTIVE HIJAB"
             link="/product_list#Hijab"
+            price="From 269,- To 289,-"
           />
           <IndexproductCard
             img_1="/images/producter/origin_zip_top.webp"
             img_2="/images/producter/origin_training_pants.webp"
             name="ACTIVE WEAR"
             link="/product_list#Wear"
+            price="From 379,- To 389,-"
           />
           <IndexproductCard
             img_1="/images/producter/origin_daily_tote.webp"
             img_2="/images/producter/reclaim_posetaske.png"
             name="ACTIVE ACCESORIES"
             link="/product_list#Accesories"
+            price="From 69,-"
           />
         </div>
+      </div>
+      <div id="Shop_button">
+        <a href="/product_list"><button class="Shop_button">SHOP</button> </a>
       </div>
     </section>
 
@@ -164,7 +171,7 @@ import ProcessCard from "../components/ProcessCard.astro";
       <p>FAQ & Contact</p>
       <p>Priacy & Cookie policy</p>
     </div>
-    <div class="part_2">
+    <div class="part_2" id="contact">
       <h4>CONTACT US</h4>
       <p>CVR : 38572377</p>
       <p>info@reclaimeactive.com</p>
@@ -365,6 +372,26 @@ import ProcessCard from "../components/ProcessCard.astro";
       width: 80%;
       scroll-snap-align: start;
       scroll-snap-stop: always;
+    }
+    #Shop_button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    .Shop_button {
+      padding: 0.75rem 1.5rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .Shop_button:hover {
+      background-color: #fe4d34;
+      color: #000;
     }
 
     /*PROCESS SECTION*/
@@ -608,6 +635,26 @@ import ProcessCard from "../components/ProcessCard.astro";
       grid-template-columns: repeat(3, 225px);
       justify-content: center;
       gap: 10%;
+    }
+    #Shop_button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    .Shop_button {
+      padding: 0.75rem 1.5rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 1.75rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .Shop_button:hover {
+      background-color: #fe4d34;
+      color: #000;
     }
 
     /* GOALS SECTION*/

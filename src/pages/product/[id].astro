@@ -33,10 +33,11 @@ const { Description } = Astro.props;
     <div class="topnav">
       <div class="burger" id="burger">☰</div>
       <ul class="links" id="navLinks">
-        <li><a href="/aboutus">OUR STORY</a></li>
-        <li><a href="/community">COMMUNITY</a></li>
         <li><a href="/product_list">SHOP</a></li>
         <li><a href="/product_list#Events">EVENTS</a></li>
+        <li><a href="/aboutus">OUR STORY</a></li>
+        <li><a href="/community">COMMUNITY</a></li>
+        <li><a href="#contact">CONTACT</a></li>
       </ul>
     </div>
     <div class="nav_logo">
@@ -102,7 +103,7 @@ const { Description } = Astro.props;
   </section>
   <footer>
     <div class="footer_logo">
-      <img src="../images/logo_footer.png" alt="Logo" />
+      <img src="/images/logo_footer.png" alt="logo" />
     </div>
 
     <div class="part_1">
@@ -110,7 +111,7 @@ const { Description } = Astro.props;
       <p>FAQ & Contact</p>
       <p>Priacy & Cookie policy</p>
     </div>
-    <div class="part_2">
+    <div class="part_2" id="contact">
       <h4>CONTACT US</h4>
       <p>CVR : 38572377</p>
       <p>info@reclaimeactive.com</p>
@@ -497,6 +498,7 @@ const { Description } = Astro.props;
     }
   }
   @media (min-width: 1024px) {
+    /* HEADER/NAVIGATION*/
     header {
       display: flex;
       justify-content: space-between;
@@ -531,18 +533,17 @@ const { Description } = Astro.props;
       list-style: none;
       margin: 0;
       padding: 0;
-      background-color: #fffdf2;
     }
     .links li a {
       color: #000;
       text-decoration: none;
       font-weight: bold;
       letter-spacing: 0.5px;
+      text-decoration: underline #fe4d34;
     }
     .burger {
       display: none; /* skjul burger på desktop */
     }
-
     /*TILBAGE_KNAP*/
     .back-button {
       background: none;

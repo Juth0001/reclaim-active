@@ -8,7 +8,6 @@ const { img, overskrift, tekst } = Astro.props;
   <article class="MVV">
     <img src={img} alt="goals_img" />
 
-    <!-- Dropdown-container -->
     <div class="dropdown">
       <button class="dropdown-toggle">
         {overskrift}
@@ -20,7 +19,6 @@ const { img, overskrift, tekst } = Astro.props;
     </div>
   </article>
 
-  <!-- JS til toggle -->
   <script is:inline>
     document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".dropdown-toggle").forEach((btn) => {

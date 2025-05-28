@@ -64,7 +64,9 @@ import ProcessCard from "../components/ProcessCard.astro";
         </div>
       </div>
       <div id="Shop_button">
-        <button class="Shop_button"><a href="/product_list">SHOP</a></button>
+        <button class="Shop_button"
+          ><a href="/product_list" class="Shop_button">SHOP</a></button
+        >
       </div>
     </section>
 
@@ -135,7 +137,8 @@ import ProcessCard from "../components/ProcessCard.astro";
       </div>
 
       <button class="Events_button"
-        ><a href="/event_gallery">Our Events</a></button
+        ><a href="/product_list#Events" class="Events_button">Our Events</a
+        ></button
       >
     </section>
 
@@ -380,7 +383,8 @@ import ProcessCard from "../components/ProcessCard.astro";
       align-items: center;
       margin-top: 2rem;
     }
-    .Shop_button {
+    .Shop_button,
+    .Shop_button a {
       padding: 0.75rem 1.5rem;
       background-color: #000;
       color: #fff;
@@ -390,7 +394,8 @@ import ProcessCard from "../components/ProcessCard.astro";
       cursor: pointer;
       transition: background-color 0.3s;
     }
-    .Shop_button:hover {
+    .Shop_button:hover,
+    .Shop_button a:hover {
       background-color: #fe4d34;
       color: #000;
     }
@@ -443,7 +448,8 @@ import ProcessCard from "../components/ProcessCard.astro";
       object-fit: cover;
       padding-bottom: 1rem;
     }
-    .Events_button {
+    .Events_button,
+    .Events_button a {
       padding: 0.75rem 1.5rem;
       background-color: #000;
       color: #fff;
@@ -453,7 +459,8 @@ import ProcessCard from "../components/ProcessCard.astro";
       cursor: pointer;
       transition: background-color 0.3s;
     }
-    .Events_button:hover {
+    .Events_button:hover,
+    .Events_button a:hover {
       background-color: #333;
     }
 
@@ -643,7 +650,8 @@ import ProcessCard from "../components/ProcessCard.astro";
       align-items: center;
       margin-top: 2rem;
     }
-    .Shop_button {
+    .Shop_button,
+    .Shop_button a {
       padding: 0.75rem 1.5rem;
       background-color: #000;
       color: #fff;
@@ -653,7 +661,8 @@ import ProcessCard from "../components/ProcessCard.astro";
       cursor: pointer;
       transition: background-color 0.3s;
     }
-    .Shop_button:hover {
+    .Shop_button:hover,
+    .Shop_button a:hover {
       background-color: #fe4d34;
       color: #000;
     }
@@ -755,18 +764,21 @@ import ProcessCard from "../components/ProcessCard.astro";
       object-fit: cover;
       padding-bottom: 1rem;
     }
-    .Events_button {
+    .Events_button,
+    .Events_button a {
       padding: 0.75rem 1.5rem;
       background-color: #000;
-      color: #fff;
+      color: white;
       border: none;
       border-radius: 999px;
       font-size: 1.75rem;
       cursor: pointer;
       transition: background-color 0.3s;
     }
-    .Events_button:hover {
-      background-color: #333;
+    .Events_button:hover,
+    .Events_button a:hover {
+      background-color: #fe4d34;
+      color: black;
     }
 
     /* COMMUNITY SECTION*/
